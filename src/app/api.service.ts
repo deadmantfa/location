@@ -90,7 +90,6 @@ export class ApiService {
   }
 
   getCurrentUserCity(path: string): Observable<any> {
-    console.log('Temp');
     return this.get(path);
   }
 

@@ -16,14 +16,14 @@ export class AppComponent {
 
     this.router.config.unshift(
       {
-        path: 'mumbai',
+        path: 'Mumbai',
         resolve: {
           path: LocationResolverService
         },
         component: HomeComponent
       },
       {
-        path: 'bengaluru',
+        path: 'Bengaluru',
         resolve: {
           path: LocationResolverService
         },
@@ -32,8 +32,8 @@ export class AppComponent {
     );
 
     this.links.push(
-      {text: 'mumbai', path: 'mumbai'},
-      {text: 'bengaluru', path: 'bengaluru'},
+      {text: 'Mumbai', path: 'Mumbai'},
+      {text: 'Bengaluru', path: 'Bengaluru'},
     );
 
   }

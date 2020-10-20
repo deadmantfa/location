@@ -22,5 +22,4 @@ export class HomeComponent implements OnInit {
       });
     this.location.replaceState(this.currentCity);
   }
-
 }

@@ -1,4 +1,4 @@
-import {BrowserModule} from '@angular/platform-browser';
+import {BrowserModule, BrowserTransferStateModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 
 import {AppComponent} from './app.component';
@@ -11,9 +11,14 @@ import {LocationResolverService} from './location-resolver.service';
 import {ApiService} from './api.service';
 import {HttpClientModule} from '@angular/common/http';
 import {TransferHttpCacheModule} from '@nguniversal/common';
+import { AboutComponent } from './about/about.component';
 
 
 const routes: Routes = [
+  {
+    path: 'about',
+    component: AboutComponent
+  },
   {
     path: '',
     resolve: {
@@ -34,14 +39,16 @@ const routes: Routes = [
   declarations: [
     AppComponent,
     HomeComponent,
-    NotfoundComponent
+    NotfoundComponent,
+    AboutComponent
   ],
   imports: [
     TransferHttpCacheModule,
     HttpClientModule,
     BrowserModule.withServerTransition({appId: 'serverApp'}),
     AppRoutingModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    BrowserTransferStateModule
   ],
   providers: [
     ApiService,
